@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <main>
-     <CourseGoal />
+     <CourseGoal title ='Learn React + TS' description = 'Learn it from the ground up'  />
     </main>
     </>
   )
