@@ -23,6 +23,11 @@ function App() {
     })
   }
 
+  const handleRemoveGoal = (id : number) =>{
+    const filteredGoals : CourseGoal[] = goals.filter(goal => goal.id !== id )
+    setGoals(filteredGoals)
+  }
+
   return (
     <>
       <main>
@@ -30,7 +35,7 @@ function App() {
           <h1>Your Course Goal</h1>
         </Header>
         <button onClick={handleAddGoal} >Add Goal</button>
-        <CourseGoalList goals ={goals} />
+        <CourseGoalList goals ={goals} handleDelete = {handleRemoveGoal} />
 
       </main>
     </>
