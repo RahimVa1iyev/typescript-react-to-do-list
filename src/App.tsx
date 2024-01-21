@@ -13,7 +13,7 @@ export type CourseGoal = {
 function App() {
   const [goals, setGoals] = useState<CourseGoal[]>([])
 
-  const handleAddGoal = (goal : string , summary :sting) => {
+  const handleAddGoal = (goal : string , summary :string) => {
     setGoals(prevGoal => {
       const newGoal: CourseGoal = {
         id: Math.random(),
@@ -37,7 +37,6 @@ function App() {
         </Header>
         <NewGoal onAddGoal = {handleAddGoal} />
         <CourseGoalList goals ={goals} handleDelete = {handleRemoveGoal} />
-
       </main>
     </>
   )
