@@ -9,6 +9,7 @@ type ListProp = {
 }
 
 const CourseGoalList: FC<ListProp> = ({ goals, handleDelete }) => {
+    let warning 
 
     if (goals.length === 0) {
 
@@ -17,15 +18,18 @@ const CourseGoalList: FC<ListProp> = ({ goals, handleDelete }) => {
         </InfoBox>
     }
 
+    if (goals.length > 3) {
+        warning = (
+            <InfoBox mode="warning" severity="medium" >
+                Your goals can't be must 2
+            </InfoBox>
+        )
+    }
+
     return (
         <>
-            {
-                goals.length > 2 ?
-                <InfoBox mode="warning" >
-                    Your goals can't be must 2
-                </InfoBox> : null
-            }
 
+          {warning}
             <ul>
                 {
                     goals.map(goal => (
